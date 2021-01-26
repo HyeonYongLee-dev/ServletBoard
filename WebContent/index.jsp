@@ -7,6 +7,6 @@
 
 </head>
 <body>
-<a href="member2">요청</a>
+<a href="memberForm.html">요청</a>
 </body>
 </html>
