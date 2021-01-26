@@ -103,7 +103,7 @@ public class MemberDAO {
 			psmt.close();
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		
