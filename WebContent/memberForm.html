@@ -5,11 +5,14 @@
 <title>회원 가입창</title>
 <script type="text/javascript">
 function fn_sendMember(){
-   var frmMember=document.frmMember;
+   var frmMember=document.frmMember; //자바스크립트에서 <form>태그의 name으로 접근해 입력된 값들을 얻는다
+   //document객체는 웹 페이지 그 자체를 의미하며 웹 페이지에 존재하는 html 요소에 접근시 반드시 document객체부터 시작해야 한다
+   
    var id=frmMember.id.value;
    var pwd=frmMember.pwd.value;
    var name=frmMember.name.value;
    var email=frmMember.email.value;
+   
    if(id.length==0 ||id==""){
       alert("아이디는 필수입니다.");
    }else if(pwd.length==0 ||pwd==""){
@@ -20,9 +23,9 @@ function fn_sendMember(){
    }else if(email.length==0 ||email==""){
       alert("이메일은 필수입니다.");
    }else{
-      frmMember.method="post";
-      frmMember.action="member3";
-      frmMember.submit();
+      frmMember.method="post"; //전송방법 post로 지정
+      frmMember.action="member3"; //서블릿 매핑 이름 지정
+      frmMember.submit(); //서블릿으로 전송
    } 
 }
 </script>
@@ -33,24 +36,24 @@ function fn_sendMember(){
 	   <th>회원 가입창</th>
 	  <tr>
 		<td>아이디</td>
-		<td><input type="text" name="id"></td>
+		<td><input type="text" name="id"></td> <!-- 입력된 id 서블릿으로 전송 -->
 	  </tr>
 	  <tr>
 		<td>비밀번호</td>
-		<td><input type="password" name="pwd"></td>
+		<td><input type="password" name="pwd"></td> <!-- 입력된 pwd 서블릿으로 전송 -->
 	  </tr>
 	  <tr>
 		<td>이름</td>
-		<td><input type="text" name="name"></td>
+		<td><input type="text" name="name"></td> <!-- 입력된 name 서블릿으로 전송 -->
 	  </tr>
 	    <tr>
 		<td>이메일</td>
-		<td><input type="text" name="email"></td>
+		<td><input type="text" name="email"></td> <!-- 입력된 이메일 서블릿으로 전송  -->
 	  </tr>
   </table>
-   <input type="button" value="가입하기" onclick="fn_sendMember()">
+   <input type="button" value="가입하기" onclick="fn_sendMember()"> <!-- click시 sendMember function 실행 -->
    <input type="reset" value="다시입력">
-   <input  type="hidden" name="command" value="addMember" />	
+   <input  type="hidden" name="command" value="addMember" /><!-- hidden 태그를 이용해 서블릿에게 회원 등록을 알린다 -->	 
   </form>
  </body>
 </html>
